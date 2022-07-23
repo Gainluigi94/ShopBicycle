@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="men">
+    <div class="user" id="register">R E G I S T R A T I O N</div>
+  </div>
+
+  <form [formGroup]="addperson" (ngSubmit)="OnSubmit()">
+    <div style="margin-top: 5%"></div>
+
+    <div style="margin-top: 20px" id="Nome">Name</div>
+    <input type="text" class="form-control" formControlName="Name" />
+
+    <div style="margin-top: 20px"></div>
+
+    <div style="margin-top: 20px" id="Cognome">Surname</div>
+    <input type="text" class="form-control" formControlName="Surname" />
+
+    <div style="margin-top: 20px"></div>
+
+    <div style="margin-top: 20px" id="Nascita">Birth</div>
+    <input type="text" class="form-control" formControlName="Birth" />
+
+    <div style="margin-top: 20px"></div>
+
+    <div style="margin-top: 20px" id="Sesso">Sex</div>
+    <input type="text" class="form-control" formControlName="Sex" />
+
+    <div style="margin-top: 20px"></div>
+
+    <div style="margin-top: 20px" id="Cap">Taxcode</div>
+    <input type="text" class="form-control" formControlName="Taxcode" />
+
+    <div style="margin-top: 20px"></div>
+
+    <div style="margin-top: 20px" id="Password">Password</div>
+    <input type="text" class="form-control" formControlName="Passwordd" />
+
+    <div style="margin-top: 20px"></div>
+
+    <div style="margin-top: 20px" id="Nazione">Nazione</div>
+    <input type="text" class="form-control" formControlName="Nation" />
+
+    <div style="margin-top: 20px"></div>
+
+    <div style="margin-top: 20px" id="email">Email</div>
+    <input type="text" class="form-control" formControlName="Email" />
+
+    <div style="margin-top: 20px"></div>
+
+    <div id="buttonzone">
+      <button type="submit" class="btn" id="loginbutton">Create</button>
+    </div>
+  </form>
+</div>
