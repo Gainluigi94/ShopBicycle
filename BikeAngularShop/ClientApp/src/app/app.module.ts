@@ -27,8 +27,8 @@ import { PersonComponent } from './person/person.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'Registrati', component: PersonComponent, pathMatch: 'full' },
-      { path: 'Accedi', component: UserComponent, pathMatch: 'full' },
+      { path: 'Create', component: PersonComponent, pathMatch: 'full' },
+      { path: 'Login', component: UserComponent, pathMatch: 'full' },
 
 
 

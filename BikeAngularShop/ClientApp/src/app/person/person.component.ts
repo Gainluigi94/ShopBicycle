@@ -1,11 +1,12 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AddressService } from '../address/address.service';
-import { Addaddress } from '../address/addaddress';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+
 import { PersonService } from './person.service';
 import { AddPerson } from './addperson';
 import { PersonResponse } from './personresponse';
+
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,9 +16,9 @@ import { PersonResponse } from './personresponse';
 })
 export class PersonComponent implements OnInit {
 
-  addaddress: Addaddress;
   persona: PersonResponse;
-  constructor(private personservice: PersonService, private addresservice: AddressService) {
+
+  constructor(private personservice: PersonService, private _route: Router) {
 
   }
   ngOnInit() {
@@ -25,17 +26,32 @@ export class PersonComponent implements OnInit {
   }
 
 
-  addperson = new FormGroup({
-    Email: new FormControl(""),
+  addpersonn = new FormGroup({
+    Email: new FormControl("", Validators.required),
     Name: new FormControl(""),
     Surname: new FormControl(""),
     Birth: new FormControl(""),
+    Way: new FormControl(""),
     Sex: new FormControl(""),
-    Passwordd: new FormControl(""),
+    Passwordd: new FormControl("",Validators.required),
     Nation: new FormControl(""),
-    Taxcode: new FormControl("")
+    Taxcode: new FormControl(""),
+    PostalCode: new FormControl(""),
+    Common: new FormControl(""),
+    Sidestreet: new FormControl(""),
+    Numbercivic: new FormControl(""),
 
+  },{
+  
   });
+
+  
+
+  get f(){
+    return this.addpersonn.controls;
+  }
+
+
 
 
   getPersons() {
@@ -50,16 +66,30 @@ export class PersonComponent implements OnInit {
   OnSubmit() {
 
     debugger;
-    const nuovapersona = <AddPerson>this.addperson.value;
+    const nuovapersona = <AddPerson>this.addpersonn.value;
 
     this.personservice.AddPerson(nuovapersona).subscribe((response) => {
+
       this.persona = response;
       console.log('Done getting persons')
     });
+    this._route.navigate(['']);
   }
 
-
-
+  ConfirmedValidator(controlName: string, matchingControlName: string){
+    return (formGroup: FormGroup) => {
+        const control = formGroup.controls[controlName];
+        const matchingControl = formGroup.controls[matchingControlName];
+        if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+            return;
+        }
+        if (control.value !== matchingControl.value) {
+            matchingControl.setErrors({ confirmedValidator: true });
+        } else {
+            matchingControl.setErrors(null);
+        }
+    }
+}
 
 
 }

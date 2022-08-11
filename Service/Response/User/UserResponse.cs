@@ -10,7 +10,7 @@ namespace Service.Response.User
     {
 
         public int Id { get; set; }
-        public int? BiciId { get; set; }
+        public string? Passwordd { get; set; }
         public string? Email { get; set; }
 
 

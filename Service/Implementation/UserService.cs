@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Model.Classes;
 using Repository.IRepository;
 using Service.Contract;
@@ -25,14 +26,16 @@ namespace Service.Implementation
 
         public UserResponse AddUser(AddUser add)
         {
-            var user = _mapper.Map<Userr>(add);
+            var user = _mapper.Map<Username>(add);
             _userRepository.Add(user);
             return _mapper.Map<UserResponse>(user);
         }
 
-        public UserResponse GetUser(int id)
+        public UserResponse GetUser(GetUser userr)
         {
-            throw new NotImplementedException();
+            var context = new BikeContext();
+            var user = context.Usernames.FromSqlRaw("Select * from Username where ").FirstOrDefault();
+            return _mapper.Map<UserResponse>(user);
         }
 
         public List<UserResponse> GetUsers()
@@ -42,7 +45,7 @@ namespace Service.Implementation
 
         public UserResponse RemoveUser(RemoveUser remove)
         {
-            var user = _mapper.Map<Userr>(remove);
+            var user = _mapper.Map<Username>(remove);
             _userRepository.Delete(user);
             return _mapper.Map<UserResponse>(user);
         }

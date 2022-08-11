@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repository
 {
-  public  class UserRepository : RepositoryBase<Userr> , IUserRepository
+  public  class UserRepository : RepositoryBase<Username> , IUserRepository
     {
         public UserRepository(BikeContext context) : base(context)
         {

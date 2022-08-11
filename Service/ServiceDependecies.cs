@@ -22,7 +22,7 @@ namespace Service
             services.AddTransient<IUserrService, UserService>();
             services.AddTransient<IPersonService, PersonService>();
             services.AddTransient<IBikeService, BikeService>();
-            services.AddTransient<IAddressService, AddressService>();
+ services.AddTransient<ICuriousPeopleService,CuriouspersonService>();
             services.AddTransient<IShoppingService, ShoppingService>();
 
 

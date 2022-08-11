@@ -9,7 +9,6 @@ namespace Model.Classes
     {
         public Bike()
         {
-            People = new HashSet<Person>();
             Shoppings = new HashSet<Shopping>();
         }
 
@@ -19,7 +18,6 @@ namespace Model.Classes
         public int? Wheel { get; set; }
         public int? Price { get; set; }
 
-        public virtual ICollection<Person> People { get; set; }
         public virtual ICollection<Shopping> Shoppings { get; set; }
     }
 }

@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{41E7B8E1-634A-4C46-B0D9-C570FB7D09C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeAngularShop", "BikeAngularShop\BikeAngularShop.csproj", "{94807C12-1533-4FCF-8EEF-1A4925D2AFC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project1", "Project1\Project1.csproj", "{3B3DBBC1-E072-4CD9-AE63-FED317636758}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{41E7B8E1-634A-4C46-B0D9-C570FB7D09C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41E7B8E1-634A-4C46-B0D9-C570FB7D09C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41E7B8E1-634A-4C46-B0D9-C570FB7D09C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94807C12-1533-4FCF-8EEF-1A4925D2AFC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94807C12-1533-4FCF-8EEF-1A4925D2AFC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94807C12-1533-4FCF-8EEF-1A4925D2AFC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94807C12-1533-4FCF-8EEF-1A4925D2AFC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B3DBBC1-E072-4CD9-AE63-FED317636758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3DBBC1-E072-4CD9-AE63-FED317636758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3DBBC1-E072-4CD9-AE63-FED317636758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3DBBC1-E072-4CD9-AE63-FED317636758}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

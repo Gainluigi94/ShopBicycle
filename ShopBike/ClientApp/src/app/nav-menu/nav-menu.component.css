@@ -1,0 +1,73 @@
+
+
+.navbar {
+  background-color: transparent;
+}
+
+#head{
+  background-color: #857e79;
+}
+
+.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+  font-family: 'Bahiana', sans-serif;
+  font-size: 60px;
+
+  
+}
+   #cont{
+    
+     background-color: #857e79;
+   } 
+
+img{  
+  width: 50%;
+height: 50%;
+border-radius: 90px;
+background: #857e79;
+-webkit-box-shadow: -3px -2px 77px 0 #B9B19F;
+-moz-box-shadow: -3px -2px 77px 0 #B9B19F;
+box-shadow: -3px -2px 77px 0 #B9B19F;
+animation: img 3s infinite;
+
+       padding:2px;
+       position: left;
+  }  #center {  
+    text-align: center; 
+     
+    }
+
+    @keyframes img{
+
+      
+       50% {
+        box-shadow: none;
+       }
+      
+     
+    }
+
+
+   
+
+
+
+
+
+
+
+  
+    html {
+      font-size: 14px;
+    }
+    @media (min-width: 768px) {
+      html {
+        font-size: 16px;
+      }
+    }
+    
+    .box-shadow {
+      box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    }

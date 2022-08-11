@@ -17,12 +17,14 @@ namespace Model.Classes
         {
         }
 
-        public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<Bike> Bikes { get; set; }
         public virtual DbSet<CreditCard> CreditCards { get; set; }
-        public virtual DbSet<Person> People { get; set; }
+        public virtual DbSet<Person> Personns { get; set; }
         public virtual DbSet<Shopping> Shoppings { get; set; }
-        public virtual DbSet<Userr> Userrs { get; set; }
+        public virtual DbSet<Username> Usernames { get; set; }
+
+        public virtual DbSet<Curiousperson> Curiouspeople { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -35,25 +37,6 @@ namespace Model.Classes
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Address>(entity =>
-            {
-                entity.HasKey(e => e.Idaddress);
-
-                entity.ToTable("Address");
-
-                entity.Property(e => e.Common)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Sidestreet)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Way)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-            });
-
             modelBuilder.Entity<Bike>(entity =>
             {
                 entity.HasKey(e => e.BiciId)
@@ -91,7 +74,7 @@ namespace Model.Classes
 
             modelBuilder.Entity<Person>(entity =>
             {
-                entity.HasKey(e => new { e.Email, e.Passwordd });
+                entity.HasKey(e => new { e.Email ,e.Passwordd});
 
                 entity.ToTable("Person");
 
@@ -105,6 +88,14 @@ namespace Model.Classes
 
                 entity.Property(e => e.Birth).HasColumnType("date");
 
+                entity.Property(e => e.Common)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Gender)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -113,7 +104,7 @@ namespace Model.Classes
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Sex)
+                entity.Property(e => e.PostalCode)
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
@@ -125,10 +116,9 @@ namespace Model.Classes
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.Bici)
-                    .WithMany(p => p.People)
-                    .HasForeignKey(d => d.BiciId)
-                    .HasConstraintName("FK_Person_Bike");
+                entity.Property(e => e.Way)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<Shopping>(entity =>
@@ -146,12 +136,32 @@ namespace Model.Classes
                     .HasForeignKey(d => d.BiciId)
                     .HasConstraintName("FK__Shopping__BiciId__30F848ED");
             });
-
-            modelBuilder.Entity<Userr>(entity =>
+            modelBuilder.Entity<Curiousperson>(entity =>
             {
-                entity.ToTable("Userr");
+                entity.Property(e => e.Email)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Message)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Subject)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Surname)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Username>(entity =>
+            {
+                entity.ToTable("Username");
 
                 entity.Property(e => e.Email)
                     .IsRequired()
@@ -164,11 +174,12 @@ namespace Model.Classes
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.Person)
-                    .WithMany(p => p.Userrs)
-                    .HasForeignKey(d => new { d.Email, d.Passwordd })
+                    .WithMany(p => p.Usernames)
+                    .HasForeignKey(d => new { d.Email })
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Userr_Person");
+                    .HasConstraintName("FK_Username_Person");
             });
+
 
             OnModelCreatingPartial(modelBuilder);
         }

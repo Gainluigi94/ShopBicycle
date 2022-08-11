@@ -11,7 +11,9 @@ namespace Service.Request.User
 
 
 
-        public string Email { get; set; } = null!;
+        public string? Email { get; set; }
+
+        public string? Passwordd { get; set; }
 
     }
 }

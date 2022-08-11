@@ -13,7 +13,7 @@ namespace Service.Contract
 
         public UserResponse AddUser(AddUser add);
 public UserResponse RemoveUser (RemoveUser remove);
-        public UserResponse GetUser(int id);        
+        public UserResponse GetUser(GetUser user);        
         public List<UserResponse> GetUsers();
 
 

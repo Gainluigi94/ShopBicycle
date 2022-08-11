@@ -1,0 +1,43 @@
+<!--Main Navigation-->
+<header id="head">
+    <nav
+      class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 "
+    >
+      <div class="container" id="cont">
+        
+        <a class="navbar-brand" [routerLink]="['/']">Bike Shop</a>
+ 
+         
+        <div
+          class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+          [ngClass]="{ show: isExpanded }"
+        >
+          <ul class="navbar-nav flex-grow">
+            <li
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a class="nav-link text-dark" [routerLink]="['/Create']">REGISTER</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <a class="nav-link text-dark" [routerLink]="['/Login']"
+                >LOGIN</a
+              >
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="nav-link text-dark" [routerLink]="['/Contact']"
+                  >CONTACT US</a
+                >
+              </li>
+          </ul>
+        </div>
+      </div>
+   </nav>
+  </header>
+  <div style="margin-top: 5%"></div>
+  <div class="container">
+        <div id="center">
+    <img src="assets/Bestcycle.jpg"></div>
+    </div>
+    

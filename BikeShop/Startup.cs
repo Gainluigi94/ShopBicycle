@@ -26,7 +26,7 @@ namespace BikeShop
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+      
             services.AddServices();
             services.AddDbContext<BikeContext>(options => options.UseSqlServer((Configuration.GetConnectionString("DbConnection"))));
             services.AddCors();
@@ -36,6 +36,13 @@ namespace BikeShop
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BikeShop", Version = "v1" });
             });
+
+
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+                options.JsonSerializerOptions.PropertyNamingPolicy = null;
+            }).AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

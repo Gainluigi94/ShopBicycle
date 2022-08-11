@@ -1,4 +1,5 @@
 ﻿using Service.Request.Person;
+using Service.Request.User;
 using Service.Response.Person;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,10 @@ namespace Service.Contract
         public PersoneResponse UpdatePerson(UpdatePerson up);
 
         public List<PersoneResponse> GetAllPersons();
+
+        public PersoneResponse GetEmail(string user,string password);
+
+        public PersoneResponse GetPassword(string user);  
 
 
     }

@@ -41,6 +41,7 @@ namespace Repository.Repository
         // protected QuoteGeneratorRepositoryBase(DbContextOptions<QuoteGeneratorDbContext> options, IServiceScopeFactory serviceScopeFactory) : this(serviceScopeFactory)
         {
             _disposeContext = true;
+
         }
 
         public virtual void Dispose()
@@ -101,6 +102,7 @@ namespace Repository.Repository
 
         public virtual int Add(T entity, bool persist = true)
         {
+
             Table.Add(entity);
             var ent = Context.Entry(entity);
             if (ent != null)

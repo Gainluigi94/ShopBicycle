@@ -20,7 +20,7 @@ namespace Repository
                     .AddTransient<IPersonRepository, PersonRepository>()
                      .AddTransient<IBikeRepository, BikeRepository>()
                      .AddTransient<ICreditCardRepository, CreditCardRepository>()
-                       .AddTransient<IAddressRepository, AddressRepository>()
+               .AddTransient<ICuriousPeopleRepository,CuriousPersonRepository>()
                         .AddTransient<IShoppingRepository, ShoppingRepository>()
                      ;
             return services;
@@ -48,15 +48,7 @@ namespace Repository
 
                   return new BikeRepository(new BikeContext(optionsBuilder.Options));
               })
-                   .AddTransient<IAddressRepository, AddressRepository>((r) =>
-                    {
-
-
-                        var optionsBuilder = new DbContextOptionsBuilder<BikeContext>();
-                        optionsBuilder.UseSqlServer(configuration.GetConnectionString("DbConnection"));
-
-                        return new AddressRepository(new BikeContext(optionsBuilder.Options));
-              })
+        
                    .AddTransient<ICreditCardRepository, CreditCardRepository>((r) =>
               {
 
@@ -66,6 +58,23 @@ namespace Repository
 
                     return new CreditCardRepository(new BikeContext(optionsBuilder.Options));
               })
+
+
+                 
+                   .AddTransient<ICuriousPeopleRepository, CuriousPersonRepository>((r) =>
+                      {
+
+
+                          var optionsBuilder = new DbContextOptionsBuilder<BikeContext>();
+                          optionsBuilder.UseSqlServer(configuration.GetConnectionString("DbConnection"));
+
+                          return new CuriousPersonRepository(new BikeContext(optionsBuilder.Options));
+                      })
+
+
+
+
+
                      .AddTransient<IUserRepository, UserRepository>((r) =>
                      {
 

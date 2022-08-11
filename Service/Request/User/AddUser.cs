@@ -8,10 +8,7 @@ namespace Service.Request.User
 {
     public class AddUser
     {
-        public int Id
-        {
-            get; set;
-        }
+        
         public string Email { get; set; } = null!;
         public string? Passwordd
         {

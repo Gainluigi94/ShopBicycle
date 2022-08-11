@@ -1,0 +1,88 @@
+<div style="margin-top: 10%"></div>
+
+
+
+
+<div class="card">
+
+    <div style="margin-top: 2%"></div>
+   <div class="container">
+       <a>C O N T A C T &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; U S</a>
+          </div>
+            <div class="d-flex align-items-start  mb-3">
+            <div class="col">
+            <form [formGroup]="addcontact" (ngSubmit)="Submit()">
+                <div style="margin-top: 15%"></div>
+    
+    
+        
+                <div id="Name">Name</div>
+                <input type="text" class="form-control" formControlName="Name">
+    
+    
+                <div id="Surname">Surname</div>
+                <input type="text" class="form-control" formControlName="Surname">
+
+
+                <div id="Email">Email</div>
+                <input type="text" class="form-control" formControlName="Email">
+    
+    
+                <div id="Phone">Phone</div>
+                <input type="text" class="form-control" formControlName="Phone">
+
+                <div id="Message">Message</div>
+                <textarea
+                id="message"
+                cols="60"
+                rows="10"
+                placeholder="Enter your message"
+                formControlName="Message"
+                required
+                ></textarea>
+    
+
+                <div id="Subject">Subject</div>
+                <input type="text" class="form-control" formControlName="Subject">
+                <div id="buttonzone">
+                <button type="submit" class="btn" id="loginbutton">Send</button>
+                </div>
+            </form>
+            </div>
+   
+           
+   
+             <div class="col">
+                 <div style="margin-top: 24%"></div>
+                  
+                     <div class="container" id="other">
+                        <div style="margin-top: 24%"></div>
+                        <div>
+                        <mat-icon>announcement</mat-icon>
+                        &nbsp;Email:
+                        </div>
+                        <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bikeshop@gmail.com
+                        </div>
+                        <div style="margin-top: 24%"></div>
+                        <div>
+                        <mat-icon>phone</mat-icon>
+                        &nbsp;Telephone number:
+                        </div>
+                        <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0625520040
+                        </div>
+                        <div style="margin-top: 24%"></div>
+                        <div>
+                        <mat-icon>room</mat-icon>
+                        &nbsp;Address
+                        </div>
+                        <div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Heijen , Nieuwevaart 3
+                        </div>
+                        </div>
+                
+                
+                 </div>
+             </div>
+    </div>
