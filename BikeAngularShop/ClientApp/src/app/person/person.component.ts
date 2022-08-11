@@ -45,14 +45,6 @@ export class PersonComponent implements OnInit {
   }
 
 
-  addAddress = new FormGroup({
-    Way: new FormControl(""),
-    PostalCode: new FormControl(""),
-    Common: new FormControl(""),
-    Sidestreet: new FormControl(""),
-    Numbercivic: new FormControl("")
-  });
-
 
 
   OnSubmit() {
